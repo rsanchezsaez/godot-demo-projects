@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://deflsq6tyf3ow"]
+
+[ext_resource type="Script" uid="uid://cqm6vt71jxiy5" path="res://node_3d.gd" id="1_6tf2l"]
+[ext_resource type="PackedScene" uid="uid://dohp772jyjxb7" path="res://stage/stage.tscn" id="2_noarx"]
+[ext_resource type="PackedScene" uid="uid://cc4idhykjp5f5" path="res://player/player.tscn" id="3_a0tk4"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_6tf2l")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.370113, 1.95941, -3.73334)
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.6052214, -2.8823519)
+current = true
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+near = 0.1
+
+[node name="Scene" type="Node3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="Stage" parent="Scene" instance=ExtResource("2_noarx")]
+
+[node name="Player" parent="Scene" instance=ExtResource("3_a0tk4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.0612973, -22.629354)
